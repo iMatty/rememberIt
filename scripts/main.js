@@ -9,6 +9,10 @@ document.querySelector(".tableMedium").style.display = 'none'; // hide board
 document.querySelector(".tableHard").style.display = 'none'; // hide board
 document.querySelector(".turns").style.display = 'none'; // hide score
 
+var cardSound = new Audio("audio/cardSound.mp3"); // buffers automatically when created
+var matchSound = new Audio("audio/matchSound.mp3"); // buffers automatically when created
+var winSound = new Audio("audio/winSound.mp3"); // buffers automatically when created
+
 // EASY
 document.querySelector(".game-startEasy").addEventListener("click", function() {
 	document.querySelector(".turns").style.display = ''; // hide score
@@ -26,6 +30,7 @@ document.querySelector(".game-startEasy").addEventListener("click", function() {
     let result = 0;
 
     const revealCard = function() {
+		cardSound.play();
         revealedCard = this;
         revealedCard.classList.remove("hidden");
 
@@ -48,7 +53,7 @@ document.querySelector(".game-startEasy").addEventListener("click", function() {
             setTimeout(function() {
                 if (revealedCards[0].className === revealedCards[1].className) {
                     console.log("win");
-
+					matchSound.play();
                     revealedCards.forEach(function(card) {
                         card.classList.add("off")
                     })
@@ -61,6 +66,7 @@ document.querySelector(".game-startEasy").addEventListener("click", function() {
                     if (result == pairs) {
                         const stopTimer = new Date().getTime();
                         const gameTime = (stopTimer - starTimer) / 1000;
+						winSound.play();
                         alert("You won! Your time: " + gameTime + " sec, Turns: " + turn);
                         location.reload();
                     }
@@ -116,6 +122,7 @@ document.querySelector(".game-startMedium").addEventListener("click", function()
     let result = 0;
 
     const revealCard = function() {
+		cardSound.play();
         revealedCard = this;
         revealedCard.classList.remove("hidden");
 
@@ -138,7 +145,7 @@ document.querySelector(".game-startMedium").addEventListener("click", function()
             setTimeout(function() {
                 if (revealedCards[0].className === revealedCards[1].className) {
                     console.log("win");
-
+					matchSound.play();
                     revealedCards.forEach(function(card) {
                         card.classList.add("off")
                     })
@@ -151,6 +158,7 @@ document.querySelector(".game-startMedium").addEventListener("click", function()
                     if (result == pairs) {
                         const stopTimer = new Date().getTime();
                         const gameTime = (stopTimer - starTimer) / 1000;
+						winSound.play();
                         alert("You won! Your time: " + gameTime + " sec, Turns: " + turn);
                         location.reload();
                     }
@@ -206,6 +214,7 @@ document.querySelector(".game-startHard").addEventListener("click", function() {
     let result = 0;
 
     const revealCard = function() {
+		cardSound.play();
         revealedCard = this;
         revealedCard.classList.remove("hidden");
 
@@ -228,7 +237,7 @@ document.querySelector(".game-startHard").addEventListener("click", function() {
             setTimeout(function() {
                 if (revealedCards[0].className === revealedCards[1].className) {
                     console.log("win");
-
+					matchSound.play();
                     revealedCards.forEach(function(card) {
                         card.classList.add("off")
                     })
@@ -241,6 +250,7 @@ document.querySelector(".game-startHard").addEventListener("click", function() {
                     if (result == pairs) {
                         const stopTimer = new Date().getTime();
                         const gameTime = (stopTimer - starTimer) / 1000;
+						winSound.play();
                         alert("You won! Your time: " + gameTime + " sec, Turns: " + turn);
                         location.reload();
                     }
