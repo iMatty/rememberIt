@@ -1,0 +1,180 @@
+body
+{
+	margin: 0;
+	background-color: #3D3230;
+	color: white;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+h1
+{
+	font-size: 65px;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 10px;
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
+button
+{
+	width: 180px;
+	height: 100px;
+	cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+	border: none;
+	padding: 15px 32px;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+    margin-top: 15px;
+}
+
+button:hover
+{
+	background-color: brown;
+}
+
+p
+{
+	font-size: 40px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 2px;
+}
+
+.board
+{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.turns
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.cardEasy
+{
+	width: 180px;
+	height: 155px;
+	display: inline-block;
+	margin: 4px;
+	background-image: url("img/reverseCard.png");
+	filter: brightness(70%);
+	border: 4px solid black;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all .10s ease-in-out;
+}
+
+.cardMedium
+{
+	width: 130px;
+	height: 105px;
+	display: inline-block;
+	margin: 4px;
+	background-image: url("img/reverseCard.png");
+	filter: brightness(70%);
+	border: 4px solid black;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all .10s ease-in-out;
+}
+
+.cardHard
+{
+	width: 130px;
+	height: 105px;
+	display: inline-block;
+	margin: 4px;
+	background-image: url("img/reverseCard.png");
+	filter: brightness(70%);
+	border: 4px solid black;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all .10s ease-in-out;
+}
+
+.cardEasy:hover
+{
+	border: 4px solid white;
+	filter: brightness(100%);
+}
+
+.cardMedium:hover
+{
+	border: 4px solid white;
+	filter: brightness(100%);
+}
+
+.cardHard:hover
+{
+	border: 4px solid white;
+	filter: brightness(100%);
+}
+
+.turns
+{
+	margin-top: 5px;
+}
+
+.card0 {
+	background-image: url("img/card0.png");
+}
+
+.card1 {
+	background-image: url("img/card1.png");
+}
+
+.card2 {
+	background-image: url("img/card2.png");
+}
+
+.card3 {
+	background-image: url("img/card3.png");
+}
+
+.card4 {
+	background-image: url("img/card4.png");
+}
+
+.card5 {
+	background-image: url("img/card5.png");
+}
+
+.card6 {
+	background-image: url("img/card6.png");
+}
+
+.card7 {
+	background-image: url("img/card7.png");
+}
+
+.card8 {
+	background-image: url("img/card8.png");
+}
+
+.card9 {
+	background-image: url("img/card9.png");
+}
+
+.hidden {
+	background-image: url("img/reverseCard.png");
+}
+
+.off {
+
+	display: inline-block;
+	margin: 4px;
+	filter: brightness(100%);
+	border: 4px solid black;
+	border-radius: 4px;
+	cursor: default;
+	transition: all .10s ease-in-out;
+}
