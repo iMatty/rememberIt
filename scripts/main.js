@@ -8,16 +8,17 @@ document.querySelector(".tableEASY").style.display = 'none'; // hide board
 document.querySelector(".tableMEDIUM").style.display = 'none'; // hide board
 document.querySelector(".tableHARD").style.display = 'none'; // hide board
 document.querySelector(".turns").style.display = 'none'; // hide score
+document.querySelector(".startAgain").style.display = 'none'; // hide try-again btn
 
-var cardSound = new Audio("audio/cardSound.mp3"); // buffers automatically when created
-var matchSound = new Audio("audio/matchSound.mp3"); // buffers automatically when created
-var winSound = new Audio("audio/winSound.mp3"); // buffers automatically when created
+var cardSound = new Audio("audio/cardSound.mp3");
+var matchSound = new Audio("audio/matchSound.mp3");
+var winSound = new Audio("audio/winSound.mp3");
 let gameDifficulty = "";
 
 
 // GAME
 function startGame(gameDifficulty) {
-    document.querySelector(".turns").style.display = ''; // hide score
+    document.querySelector(".turns").style.display = ''; // show score
     document.querySelector(".level").innerHTML = 'Level: ' + gameDifficulty;
     let cards = document.querySelectorAll(".card" + gameDifficulty);
     cards = [...cards];
@@ -69,8 +70,13 @@ function startGame(gameDifficulty) {
                         const stopTimer = new Date().getTime();
                         const gameTime = (stopTimer - starTimer) / 1000;
                         winSound.play();
-                        alert("You won! Your time: " + gameTime + " sec, Turns: " + turn);
-                        location.reload();
+                        //alert("You won! Your time: " + gameTime + " sec, Turns: " + turn);
+                        //location.reload(); // old win-screen version
+						
+						document.querySelector(".turns").style.display = 'none'; // hide score
+						document.querySelector(".table" + gameDifficulty).style.display = 'none'; // hide table
+						document.querySelector(".startAgain").style.display = ''; // show try-again btn
+						document.getElementsByClassName("win-box")[0].innerHTML = "You won! <br>Your time: " + gameTime + " sec <br>Turns: " + turn;
                     }
                 } else {
                     console.log("lose");

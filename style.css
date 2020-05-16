@@ -178,3 +178,7 @@ p
 	cursor: default;
 	transition: all .10s ease-in-out;
 }
+
+.win-box{
+	color: green;
+}
